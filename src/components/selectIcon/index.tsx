@@ -1,0 +1,1 @@
+export {SelectIcon as default} from './selectIcon'

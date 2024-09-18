@@ -1,0 +1,162 @@
+$darkgray-color: #52525B;
+$primary-color : #5556FF;
+$secondary-color : #3929D9;
+$tertiary-color : #2A2689;
+$primary-light-color : #DDE5FF;
+$secondary-light-color : #C2CEFF;
+$tertiary-light-color : #9CADFF;
+$navbar-body-bg- : hsl(224, 100%, 96%);
+
+
+//common
+.headline-desktop1{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.headline-desktop2{
+    font-size: 32;
+    font-weight: 600;
+}
+
+.headline-desktop3{
+    font-size: 24;
+    font-weight: 400;
+}
+
+.headline-desktop4{
+    font-size: 16;
+    font-weight: 300;
+}
+
+.body-desktop-{
+    font-size: 16;
+    font-weight: 200;
+}
+
+.caption-desktop4-{
+    font-size: 16;
+    font-weight: 200;
+    color: #A1A1AA;
+}   
+
+%content-center{
+    padding: 0px 10rem;
+}
+//icons
+.icon-color-primary{
+    stroke: $primary-color;
+}
+.icon-color-secondary{
+    stroke: $secondary-color;
+}
+.icon-color-tertiary{
+    stroke: $tertiary-color;
+}
+.icon-color-darkgray{
+    stroke: $darkgray-color;
+}
+.icon-color-white{
+    stroke: #fff;
+}
+//components
+%button{
+    border-radius: 50px;
+    padding: 0px 1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.button-sm{ 
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.button-md{ 
+    padding: 8px 25px;  
+    font-size: 14px;
+}
+
+.button-primary{
+    @extend %button;
+    background-color: $primary-color;
+    color: #fff;
+}
+
+.button-secondary{
+    @extend %button;
+    background-color: $secondary-color;
+    color: #fff;
+}
+
+.button-tertiary{
+    @extend %button;
+    background-color: $tertiary-color;
+    color: #fff;
+}
+
+.button-primary-light{
+    @extend %button;
+    background-color: $primary-light-color;
+    color: $primary-color;
+}
+
+.button-secondary-light{
+    @extend %button;
+    background-color: $secondary-light-color;
+    color: $secondary-color;
+}
+
+.button-tertiary-light{
+    @extend %button;
+    background-color: $tertiary-light-color;
+    color: $tertiary-color;
+}
+
+.button-rounded-sm{
+    border-radius: 100%;
+    padding: 10px 10px;
+}
+
+.button-rounded-md{
+    border-radius: 100%;
+    padding: 15px 15px;
+}
+
+.button-border-primary-light{
+    border: 2px solid $primary-color;
+}
+
+.button-border-secondary-light{
+    border: 2px solid $primary-color;
+}
+
+.button-border-tertiary-light{
+    border: 2px solid $primary-color;
+}
+
+//custom
+.home-layout-body{
+    width: 100vw;
+    height: 100vh;
+
+    .navbar{
+        background-color: $navbar-body-bg-;
+        height: 90px;
+        @extend %content-center;
+        .navbar-body{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+    }
+    
+}
+
+
+body{
+    color: #18181B;
+}
