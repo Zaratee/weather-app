@@ -5,6 +5,7 @@ interface IProps {
     iconType?: 'Arrow' | 'Edit' | 'Delete' | 'Pin' | 'Chevron-Down' | 'Chevron-Up' | 'Drops' | 'Wind' | 'Eye' | 'Sunrise' | 'User-Check',
     color: 'Primary' | 'Secondary' | 'Tertiary' | 
     'Primary Light' | 'Secondary Light' | 'Tertiary Light',
+    iconColor?: 'Primary' | 'Secondary' | 'Tertiary' | 'White' | 'DarkGray',
     type: 'Icon Rounded' | 'Label Icon Right' | 'Label Icon Left' | 'Label',
     size: 'sm' | 'md',
     border?: Boolean
@@ -13,10 +14,10 @@ interface IProps {
 
 
 export const Button = (props: IProps ) => {
-    const {label = 'Lorem', color, type, size, border, iconType = 'Arrow'}  = props
+    const {label = 'Lorem', color, type, size, border, iconType = 'Arrow', iconColor = 'White'}  = props
     const classNameCustom  = `button-${color.toLowerCase().replace(' ', '-')} button-${size} 
     button-${border && color.includes('Light') && `border-${color.toLowerCase().replace(' ', '-')}`}`
-
+   
     switch (type) {
         case 'Label':
             return (
@@ -27,19 +28,19 @@ export const Button = (props: IProps ) => {
         case 'Label Icon Left':
             return (
                 <div className={classNameCustom}>
-                   <SelectIcon type={iconType} color={!color.includes('Light') ? 'White' : color.replace(' Light', '')} size='sm'/> {label}
+                   <SelectIcon type={iconType} color={iconColor} size={size}/> {label}
                 </div>
               )
         case 'Label Icon Right':
             return (
                 <div className={classNameCustom}>
-                {label} <SelectIcon type={iconType} color={!color.includes('Light') ? 'White' : color.replace(' Light', '')} size='sm'/>
+                {label} <SelectIcon type={iconType} color={iconColor} size={size}/>
                 </div>
               )
         case 'Icon Rounded':
             return (
                 <div className={` ${classNameCustom} button-rounded-${size}`}>
-                   <SelectIcon type={iconType} color={!color.includes('Light') ? 'White' : color.replace(' Light', '')} size='md'/> 
+                   <SelectIcon type={iconType} color={iconColor} size={size}/> 
                 </div>
               )
     
