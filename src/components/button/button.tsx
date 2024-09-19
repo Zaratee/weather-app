@@ -1,3 +1,4 @@
+import { useState } from "react"
 import SelectIcon from "../selectIcon"
 
 interface IProps {
@@ -17,6 +18,7 @@ export const Button = (props: IProps ) => {
     const {label = 'Lorem', color, type, size, border, iconType = 'Arrow', iconColor = 'White'}  = props
     const classNameCustom  = `button-${color.toLowerCase().replace(' ', '-')} button-${size} 
     button-${border && color.includes('Light') && `border-${color.toLowerCase().replace(' ', '-')}`}`
+    const [showArrow, setShowArrow] = useState(false)
    
     switch (type) {
         case 'Label':
@@ -39,8 +41,8 @@ export const Button = (props: IProps ) => {
               )
         case 'Icon Rounded':
             return (
-                <div className={` ${classNameCustom} button-rounded-${size}`}>
-                   <SelectIcon type={iconType} color={iconColor} size={size}/> 
+                <div onMouseEnter={()=> setShowArrow(true)} onMouseLeave={()=> setShowArrow(false)} className={` ${classNameCustom} button-rounded-${size}`}>
+                   {showArrow ?<SelectIcon type={'Arrow'} color={iconColor} size={size}/>: <SelectIcon type={iconType} color={iconColor} size={size}/> }
                 </div>
               )
     
