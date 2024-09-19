@@ -11,20 +11,12 @@ export const router = createBrowserRouter([
           index: true,
           element: <Home/>
         },
-        {
-          path:'home',
-          element: <Home/>
-        },
-        {
-          path:'*',
-          element: <Navigate to={'/home'} />
-        },
         
       ]
     },
     {
       path: '*',
-      element: <Navigate to={'/home'} />,
+      element: <Navigate to={'/'} />,
     },
   ]);
   
