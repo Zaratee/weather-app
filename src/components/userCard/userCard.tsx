@@ -11,7 +11,8 @@ export const UserCard = (props:IProps) => {
   const {id, lat='20.6637808', lng='-103.4315425'} = props
   return (
     <div className="user-card">
-      <img src={`src/assets/img/user${id}.png`}/>
+      {/* <img src={`src/assets/img/user${id}.png`}/> */}
+      <img src={`../public/user${id}.png`}/>
       <div className='user-card-body'>
         <div className='headline-desktop3'>User name</div>
         <div className='user-card-info'>
