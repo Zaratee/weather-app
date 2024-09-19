@@ -4,17 +4,22 @@ import Home from "./page/home";
 
 export const router = createBrowserRouter([
     {
-      path: "/home",
+      path: "/",
       element: <HomeLayout/>,
       children: [
         {
-          path:'',
+          index: true,
           element: <Home/>
         },
         {
-          path: '*',
-          element: <Navigate to={'/home'} />,
+          path:'home',
+          element: <Home/>
         },
+        {
+          path:'*',
+          element: <Navigate to={'/home'} />
+        },
+        
       ]
     },
     {
