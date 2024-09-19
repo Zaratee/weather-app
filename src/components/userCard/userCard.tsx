@@ -1,6 +1,6 @@
 import Button from 'src/components/button'
 import SelectIcon from 'src/components/selectIcon'
-
+import userImg from 'src/assets/img/user1.png'
 interface IProps{
   id: String,
   lat: String,
@@ -12,7 +12,7 @@ export const UserCard = (props:IProps) => {
   return (
     <div className="user-card">
       {/* <img src={`src/assets/img/user${id}.png`}/> */}
-      <img src={`../public/user${id}.png`}/>
+      <img src={userImg}/>
       <div className='user-card-body'>
         <div className='headline-desktop3'>User name</div>
         <div className='user-card-info'>
