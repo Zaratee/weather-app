@@ -4,7 +4,7 @@ import Home from "./page/home";
 
 export const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/home",
       element: <HomeLayout/>,
       children: [
         {
@@ -13,14 +13,14 @@ export const router = createBrowserRouter([
         },
         {
           path: '*',
-          element: <Navigate to={'/'} />,
+          element: <Navigate to={'/home'} />,
         },
         
       ]
     },
     {
       path: '*',
-      element: <Navigate to={'/'} />,
+      element: <Navigate to={'/home'} />,
     },
   ]);
   
