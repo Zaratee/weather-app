@@ -8,6 +8,10 @@ export const router = createBrowserRouter([
       element: <HomeLayout/>,
       children: [
         {
+          path:'',
+          element: <Navigate to={'/home'} />
+        },
+        {
           path:'home',
           element: <Home/>
         }
