@@ -8,7 +8,7 @@ interface IProps{
 }
 
 export const UserCard = (props:IProps) => {
-  const {id, lat='20.6637808', lng='-103.4315425'} = props
+  const { lat='20.6637808', lng='-103.4315425'} = props
   return (
     <div className="user-card">
       {/* <img src={`src/assets/img/user${id}.png`}/> */}
