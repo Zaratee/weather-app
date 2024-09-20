@@ -1,20 +1,21 @@
 import Button from 'src/components/button'
 import SelectIcon from 'src/components/selectIcon'
-import userImg from 'src/assets/img/user1.png'
+
 interface IProps{
   id: String,
   lat: String,
-  lng: String
+  lng: String,
+  userName: String
 }
 
 export const UserCard = (props:IProps) => {
-  const { lat='20.6637808', lng='-103.4315425'} = props
+  const { lat, lng, userName, id} = props
   return (
     <div className="user-card">
-      {/* <img src={`src/assets/img/user${id}.png`}/> */}
-      <img src={userImg}/>
+      <img src={`src/assets/img/user${id}.png`}/>
+      {/* <img src={userImg}/> */}
       <div className='user-card-body'>
-        <div className='headline-desktop3'>User name</div>
+        <div className='headline-desktop3'>{userName}</div>
         <div className='user-card-info'>
           <SelectIcon color='Primary' size='md' type='Pin' />
           {lat},  {lng}
