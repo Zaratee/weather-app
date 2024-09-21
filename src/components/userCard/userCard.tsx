@@ -5,15 +5,16 @@ interface IProps{
   id: String,
   lat: String,
   lng: String,
-  userName: String
+  userName: String, 
+  userImg: string
 }
 
 export const UserCard = (props:IProps) => {
-  const { lat, lng, userName, id} = props
+  const { lat, lng, userName, id, userImg} = props
   return (
     <div className="user-card">
-      <img src={`src/assets/img/user${id}.png`}/>
-      {/* <img src={userImg}/> */}
+      {/* <img src={`src/assets/img/user${id}.png`}/> */}
+      <img src={userImg}/>
       <div className='user-card-body'>
         <div className='headline-desktop3'>{userName}</div>
         <div className='user-card-info'>

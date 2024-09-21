@@ -11,11 +11,11 @@ interface IUser{
   username: String,
   lng: String,
   lat: String,
+  img: string,
 }
 
 const Home = (props: IProps) => {
   const {users} = props
-  console.log(users)
   return (
     <div className="home">
         <div>
@@ -26,7 +26,7 @@ const Home = (props: IProps) => {
           {
             users.map((user, index) => {
               return(
-                <UserCard key={index} id={user.id} lat={user.lat} lng={user.lng} userName={user.username}/>
+                <UserCard key={index} id={user.id} lat={user.lat} lng={user.lng} userName={user.username} userImg={user.img}/>
               )
             })
           }
