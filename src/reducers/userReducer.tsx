@@ -1,5 +1,6 @@
 import { Action } from "@reduxjs/toolkit";
 import { INITIAL_USERS } from "src/actions/weatherApiActions";
+import { allAvatars } from "src/data/userProfiles";
 
 const initialState: IUser[] = 
     [
@@ -8,6 +9,7 @@ const initialState: IUser[] =
         username: 'Test boy',
         lat: '20.6637808',
         lng: '-103.4315425',
+        img: allAvatars[0].img,
         locationWeather : {
           humidity: '70',
           uv: '1',
@@ -21,6 +23,7 @@ const initialState: IUser[] =
         username: 'Test girl',
         lat: '20.6637808',
         lng: '-103.4315425',
+        img: allAvatars[1].img,
         locationWeather : {
           humidity: '70',
           uv: '1',
@@ -36,6 +39,7 @@ const initialState: IUser[] =
     username: String,
     lng: String,
     lat: String,
+    img: String,
     locationWeather: {
       humidity: String,
       wind_kph: String,
