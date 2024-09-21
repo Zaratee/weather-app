@@ -24,9 +24,9 @@ const Home = (props: IProps) => {
         </div>
         <UserContainer>
           {
-            users.map((user) => {
+            users.map((user, index) => {
               return(
-                <UserCard id={user.id} lat={user.lat} lng={user.lng} userName={user.username}/>
+                <UserCard key={index} id={user.id} lat={user.lat} lng={user.lng} userName={user.username}/>
               )
             })
           }

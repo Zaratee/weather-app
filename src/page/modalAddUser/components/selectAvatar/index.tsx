@@ -1,0 +1,1 @@
+export {SelectAvatar as default} from './selectAvatar'

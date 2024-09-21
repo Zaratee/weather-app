@@ -21,8 +21,8 @@ export const UserCard = (props:IProps) => {
           {lat},  {lng}
         </div>
         <div className='user-card-btns'>
-          <Button color='Primary Light' type='Label' size='md' label={'Detalles'} border/> 
-          <Button color='Primary Light' type='Icon Rounded' size='md' iconType='Delete' iconColor='Primary'/>
+          <Button onClick={()=>{}} color='Primary Light' type='Label' size='md' label={'Detalles'} border/> 
+          <Button onClick={()=>{}} color='Primary Light' type='Icon Rounded' size='md' iconType='Delete' iconColor='Primary'/>
         </div>
       </div>
     </div>

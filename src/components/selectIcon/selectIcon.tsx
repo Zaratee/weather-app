@@ -1,6 +1,7 @@
 import ArrowIcon from "src/assets/icons/arrow";
 import ChevronDownIcon from "src/assets/icons/chevron_down";
 import ChevronUpIcon from "src/assets/icons/chevron_up";
+import CrossIcon from "src/assets/icons/cross";
 import DeleteIcon from "src/assets/icons/delete";
 import DropsIcon from "src/assets/icons/drops";
 import EditIcon from "src/assets/icons/edit";
@@ -11,7 +12,7 @@ import UserCheckIcon from "src/assets/icons/user_check";
 import WindIcon from "src/assets/icons/wind";
 
 interface IProps {
-    type: 'Arrow' | 'Edit' | 'Delete' | 'Pin' | 'Chevron-Down' | 'Chevron-Up' | 'Drops' | 'Wind' | 'Eye' | 'Sunrise' | 'User-Check',
+    type: 'Arrow' | 'Edit' | 'Delete' | 'Pin' | 'Chevron-Down' | 'Chevron-Up' | 'Drops' | 'Wind' | 'Eye' | 'Sunrise' | 'User-Check'| 'Cross',
     color: 'Primary' | 'Secondary' | 'Tertiary' |'DarkGray' | 'White',
     size: 'sm' | 'md'
 }
@@ -74,6 +75,11 @@ export const SelectIcon = (props: IProps) => {
         case 'User-Check':
             return (
                 <UserCheckIcon size={sizeValue} color={color}/>
+            )
+       
+        case 'Cross':
+            return (
+                <CrossIcon size={sizeValue} color={color}/>
             )
        
         default:

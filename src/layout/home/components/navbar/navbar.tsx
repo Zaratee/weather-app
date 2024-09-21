@@ -1,13 +1,17 @@
 import Button from "src/components/button"
 
-export const Navbar = () => {
+interface IProps{
+  setShowModalAddUser: (value: Boolean)=>void
+}
+export const Navbar = (props: IProps) => {
+  const {setShowModalAddUser} = props
   return (
     <div className="navbar">
         <div className="navbar-body">
            <div className="headline-desktop2">
                 Weather app / Carlos Zarate
            </div>
-           <Button color={'Primary'} type={"Label"} size={"md"} label={'Ingresar usuario'}/>
+           <Button onClick={()=>setShowModalAddUser(true)} color={'Primary'} type={"Label"} size={"md"} label={'Ingresar usuario'}/>
         </div>
     </div>
   )
