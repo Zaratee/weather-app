@@ -10,7 +10,7 @@ interface IProps{
 }
 
 export const UserCard = (props:IProps) => {
-  const { lat, lng, userName, id, userImg} = props
+  const { lat, lng, userName, userImg} = props
   return (
     <div className="user-card">
       {/* <img src={`src/assets/img/user${id}.png`}/> */}
