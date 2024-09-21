@@ -11,7 +11,7 @@ export const HomeLayout = () => {
   }
 
   return (
-    <div className="home-layout">
+    <div className={`home-layout ${showModalAddUser && 'overflow-hidden'}`}>
         <Navbar setShowModalAddUser={handlerShowModalAddUser}/>
         <div className="home-layout-body">
           <Outlet/>

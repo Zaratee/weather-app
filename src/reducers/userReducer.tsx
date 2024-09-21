@@ -7,8 +7,8 @@ const initialState: IUser[] =
       {
         id: '1',
         username: 'Test boy',
-        lat: '20.6637808',
-        lng: '-103.4315425',
+        lat: '25.6137808',
+        lng: '-93.4305425',
         img: allAvatars[0].img,
         locationWeather : {
           humidity: '70',
