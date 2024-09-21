@@ -7,10 +7,10 @@ interface IProps{
 }
 
 interface IUser{
-  id: String,
-  username: String,
-  lng: String,
-  lat: String,
+  id: string,
+  username: string,
+  lng: string,
+  lat: string,
   img: string,
 }
 

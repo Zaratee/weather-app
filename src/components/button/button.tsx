@@ -2,14 +2,14 @@ import { useState } from "react"
 import SelectIcon from "../selectIcon"
 
 interface IProps {
-    label?: String,
+    label?: string,
     iconType?: 'Arrow' | 'Edit' | 'Delete' | 'Pin' | 'Chevron-Down' | 'Chevron-Up' | 'Drops' | 'Wind' | 'Eye' | 'Sunrise' | 'User-Check' | 'Cross',
     color: 'Primary' | 'Secondary' | 'Tertiary' | 
     'Primary Light' | 'Secondary Light' | 'Tertiary Light',
     iconColor?: 'Primary' | 'Secondary' | 'Tertiary' | 'White' | 'DarkGray',
     type: 'Icon Rounded' | 'Label Icon Right' | 'Label Icon Left' | 'Label',
     size: 'sm' | 'md',
-    border?: Boolean,
+    border?: boolean,
     onClick: ()=>void
 }
 

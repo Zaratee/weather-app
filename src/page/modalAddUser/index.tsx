@@ -5,20 +5,20 @@ import Input from "src/components/input"
 import GoogleMapReact from 'google-map-react';
 
 interface IErrors{
-    profile: String,
-    username: String,
-    lat: String,
-    lng: String
+    profile: string,
+    username: string,
+    lat: string,
+    lng: string
 }
 interface IMyFormValues {
-    profile: String,
-    username: String,
-    lat: String,
-    lng: String
+    profile: string,
+    username: string,
+    lat: string,
+    lng: string
 }
 interface IProps{
-    isModalActive: Boolean
-    setShowModalAddUser: (value: Boolean)=>void
+    isModalActive: boolean
+    setShowModalAddUser: (value: boolean)=>void
 
 }
 
@@ -74,7 +74,7 @@ const ModalAddUser = (props : IProps) => {
                                 <SelectAvatar/>
                                 <Input label="Usuario" placeholder="Nombre de usuario"/>
                                 <div className="add-user-input-container">
-                                    <Input label="Latitud" placeholder="Ingresa latitud"/>
+                                    <Input  label="Latitud" placeholder="Ingresa latitud"/>
                                     <Input label="Longitud" placeholder="Ingresa longitud"/>
                                 </div>
                                 <div className="fit-content">

@@ -35,17 +35,17 @@ const initialState: IUser[] =
     ]
   
   interface IUser{
-    id: String,
-    username: String,
-    lng: String,
-    lat: String,
-    img: String,
+    id: string,
+    username: string,
+    lng: string,
+    lat: string,
+    img: string,
     locationWeather: {
-      humidity: String,
-      wind_kph: String,
-      wind_degree: String,
-      uv: String,
-      vis_km: String
+      humidity: string,
+      wind_kph: string,
+      wind_degree: string,
+      uv: string,
+      vis_km: string
     }
   }
 

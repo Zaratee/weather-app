@@ -4,9 +4,9 @@ import ModalAddUser from "src/page/modalAddUser"
 import { useState } from "react"
 
 export const HomeLayout = () => {
-  const [showModalAddUser, setShowModalAddUser] = useState<Boolean>(false)
+  const [showModalAddUser, setShowModalAddUser] = useState<boolean>(false)
 
-  const handlerShowModalAddUser = (value : Boolean) => {
+  const handlerShowModalAddUser = (value : boolean) => {
     setShowModalAddUser(value)
   }
 

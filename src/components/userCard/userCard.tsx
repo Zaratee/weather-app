@@ -2,10 +2,10 @@ import Button from 'src/components/button'
 import SelectIcon from 'src/components/selectIcon'
 
 interface IProps{
-  id: String,
-  lat: String,
-  lng: String,
-  userName: String, 
+  id: string,
+  lat: string,
+  lng: string,
+  userName: string, 
   userImg: string
 }
 

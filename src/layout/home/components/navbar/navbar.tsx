@@ -1,7 +1,7 @@
 import Button from "src/components/button"
 
 interface IProps{
-  setShowModalAddUser: (value: Boolean)=>void
+  setShowModalAddUser: (value: boolean)=>void
 }
 export const Navbar = (props: IProps) => {
   const {setShowModalAddUser} = props
