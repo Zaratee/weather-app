@@ -1,4 +1,3 @@
-import { Action } from "@reduxjs/toolkit";
 import { CREATE_USER, INITIAL_USERS } from "src/actions/weatherApiActions";
 import { allAvatars } from "src/data/userProfiles";
 
@@ -48,12 +47,8 @@ const initialState: IUser[] =
       vis_km: string
     }
   }
-  interface IAction{
-    type: string,
-    user: IUser[]
-  }
 
-  export const UserReducer = (state = initialState, action : IAction) => {
+  export const UserReducer = (state = initialState, action:any) => {
     switch (action.type) {
       case INITIAL_USERS:
         const newState = state

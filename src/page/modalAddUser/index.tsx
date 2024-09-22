@@ -6,7 +6,6 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import { Dispatch } from "@reduxjs/toolkit"
 import { getWeatherFromNewUser } from "src/actions/weatherApiActions"
 import { connect } from "react-redux"
-import { useEffect } from "react"
 
 interface IFields{
     username: string,
