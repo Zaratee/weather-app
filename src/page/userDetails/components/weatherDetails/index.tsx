@@ -1,0 +1,1 @@
+export {WeatherDetails as default} from './weatherDetails'

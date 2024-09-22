@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import Button from 'src/components/button'
 import SelectIcon from 'src/components/selectIcon'
 
@@ -6,14 +7,19 @@ interface IProps{
   lat: string,
   lng: string,
   userName: string, 
-  userImg: string
+  userImg: string,
+  hideButtons?: boolean
 }
 
 export const UserCard = (props:IProps) => {
-  const { lat, lng, userName, userImg} = props
+  const { lat, lng, userName, userImg, id, hideButtons} = props
+  const navigate = useNavigate();
+
+  const handlerDetails = ()=>{
+    navigate('/details', { state: { id: id } });
+  }
   return (
-    <div className="user-card">
-      {/* <img src={`src/assets/img/user${id}.png`}/> */}
+    <div className={`user-card ${hideButtons && 'user-card-compact'}`}>
       <img src={userImg}/>
       <div className='user-card-body'>
         <div className='headline-desktop3'>{userName}</div>
@@ -21,10 +27,13 @@ export const UserCard = (props:IProps) => {
           <SelectIcon color='Primary' size='md' type='Pin' />
           {lat},  {lng}
         </div>
-        <div className='user-card-btns'>
-          <Button onClick={()=>{}} color='Primary Light' type='Label' size='md' label={'Detalles'} border/> 
-          <Button onClick={()=>{}} color='Primary Light' type='Icon Rounded' size='md' iconType='Delete' iconColor='Primary'/>
-        </div>
+        {
+          !hideButtons &&
+          <div className='user-card-btns'>
+            <Button onClick={handlerDetails} color='Primary Light' type='Label' size='md' label={'Detalles'} border/> 
+            <Button onClick={()=>{}} color='Primary Light' type='Icon Rounded' size='md' iconType='Delete' iconColor='Primary'/>
+          </div>
+        }
       </div>
     </div>
   )

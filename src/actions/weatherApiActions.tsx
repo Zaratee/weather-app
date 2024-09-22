@@ -73,35 +73,23 @@ interface INewUser{
       humidity: number,
       wind_kph: number,
       wind_degree: number,
+      wind_dir: string,
       uv: number,
-      vis_km: number
+      vis_km: number,
+      name: string,
+      date: string,
+      temp_c: number,
+      condition: string
     }
   }
 
 export const INITIAL_USERS = "@GET/INITIALUSERS";
 export const CREATE_USER = "@POST/NEWUSER";
-// export const WEATHERAPI_UPDATE_ALTOMOBILE_API = "@WEATHERAPI/UPDATE_ALTOMOBILE_API";
-// export const WEATHERAPI_CREATE_CUSTOM = "@WEATHERAPI/CREATE_CUSTOM";
-// export const WEATHERAPI_FETCHING = "@WEATHERAPI/FETCHING";
-// export const WEATHERAPI_GET_SESSION_STORAGE = "@WEATHERAPI/WEATHERAPI_GET_SESSION_STORAGE";
+export const GET_USER_INFO = "@GET/USERINFO";
 
-// const fetching = (fetching = true) => {
-//   return { type: WEATHERAPI_FETCHING, fetching };
-// }
-// const fetchingError = (error = "Unkown Error") => {
-//   return { type: WEATHERAPI_ERROR, error };
-// }
 const createNewUser = (user :INewUser) => {
   return { type: CREATE_USER, user };
 }
-// const createCustomAppointments = (appointment = {}) => {
-//   return { type: WEATHERAPI_CREATE_CUSTOM, appointment };
-// }
-// const getSessionStorageApointments = () => {
-//   return { type: WEATHERAPI_GET_SESSION_STORAGE };
-// }
-
-
 
 export const getWeatherFromNewUser =  (dispatch:Dispatch) => (value: IInfoUserFromForm) => {
     axios.get(`https://api.weatherapi.com/v1/current.json?key=8906e599e51042e4855194612241909&q=${value.lat},${value.lng}&aqi=no`)
@@ -119,8 +107,13 @@ export const getWeatherFromNewUser =  (dispatch:Dispatch) => (value: IInfoUserFr
                 humidity: data.current.humidity,
                 wind_kph: data.current.wind_kph,
                 wind_degree: data.current.wind_degree,
+                wind_dir: data.current.wind_dir,
                 uv: data.current.uv,
-                vis_km: data.current.vis_km
+                vis_km: data.current.vis_km,
+                name: data.location.name+', '+data.location.region,
+                date: data.location.localtime.slice(0, data.location.localtime.indexOf(' ')),
+                temp_c: data.current.temp_c,
+                condition: data.current.condition.text
             }
         }
         dispatch(createNewUser(infoNewUser));
@@ -128,26 +121,5 @@ export const getWeatherFromNewUser =  (dispatch:Dispatch) => (value: IInfoUserFr
     .catch(function () {
         alert('Error Usuario no creado. Ubicación no encontrada')
         return
-    })
-    .finally(function () {
-        // always executed
     });
-
-    // fetch('https://altomobile.blob.core.windows.net/api/test.json')
-    // .then((response) => response.json())
-    // .then((data) => {
-    //     dispatch(updateAppointmentsApi(data));
-    // })
-    // .catch((err) => {
-    //   dispatch(fetchingError(err.message));
-    // });
 }
-
-// export const saveCustomAppointment = (customAppointment) => (dispatch) => {
-//   const {appointment, name} = customAppointment
-//   dispatch(createCustomAppointments({newCustomAppointment:appointment, name: name}))
-// }
-
-// export const getAllSessionStorageApointments = () => (dispatch) =>  {
-//   dispatch(getSessionStorageApointments())
-// }

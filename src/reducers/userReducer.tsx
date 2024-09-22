@@ -14,7 +14,12 @@ const initialState: IUser[] =
           uv: '1',
           vis_km: '10',
           wind_degree: '59',
-          wind_kph: '13'
+          wind_kph: '13',
+          wind_dir: 'SSW',
+          name: 'GDL',
+          date:'2024-09-21',
+          temp_c: 32,
+          condition: 'Partly cloudy'
         }
       },
       {
@@ -28,7 +33,12 @@ const initialState: IUser[] =
           uv: '1',
           vis_km: '10',
           wind_degree: '59',
-          wind_kph: '13'
+          wind_kph: '13',
+          wind_dir: 'SSW',
+          name: 'GDL',
+          date:'2024-09-21',
+          temp_c: 30,
+          condition: 'Partly cloudy'
         }
       }
     ]
@@ -43,8 +53,13 @@ const initialState: IUser[] =
       humidity: string,
       wind_kph: string,
       wind_degree: string,
+      wind_dir: string
       uv: string,
-      vis_km: string
+      vis_km: string,
+      name: string,
+      date: string,
+      temp_c: number
+      condition: string
     }
   }
 

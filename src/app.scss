@@ -5,11 +5,20 @@ $tertiary-color : #2A2689;
 $primary-light-color : #DDE5FF;
 $secondary-light-color : #C2CEFF;
 $tertiary-light-color : #9CADFF;
-$navbar-body-bg- : hsl(224, 100%, 96%);
+$navbar-body-bg : hsl(224, 100%, 96%);
 $card-user-body-bg: #F4F4F5;
 $input-bg: #F4F4F5;
+$weather-details-color: #F4F4F5;
+$weather-details-section-bg: #F4F4F5;
+$state-details-bg: #F4F4F5;
+$weather-details-section-color: #71717A;
 $input-color-placeholder: #A1A1AA;
 $input-color: #656565;
+
+body{
+    overflow-x: hidden;
+    color: #18181B;
+}
 
 //common
 .headline-desktop1{
@@ -199,6 +208,15 @@ $input-color: #656565;
     flex-wrap: wrap;
     justify-content: center;
 }
+.user-card-compact{
+    height: 100% !important;
+    padding-bottom: 1rem !important;
+    width: 90% !important;
+    img{
+        width: 175px !important;
+        height: 175px !important;
+    }
+}
 
 .user-card{
     width: fit-content;
@@ -279,23 +297,32 @@ $input-color: #656565;
 
 //home
 
+.navbar{
+    background-color: $navbar-body-bg;
+    height: 90px;
+    @extend %content-center;
+    .navbar-body{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }    
+}
+
 .home-layout{
     width: 100vw;
     height: 100vh;
     position: relative;
-    .navbar{
-        background-color: $navbar-body-bg-;
-        height: 90px;
-        @extend %content-center;
-        .navbar-body{
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
+    .home-layout-body{
+        @extend %content-center
         }
     }
-    .home-layout-body{
+.details-layout{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: $navbar-body-bg;
+    .details-layout-body{
         @extend %content-center
     }
 }
@@ -368,8 +395,108 @@ $input-color: #656565;
         }
     }
 }
+//WeatherDetailsSection
+.weather-details-section{
+    width: 115%; 
+    display: flex;
+    
+    gap: 5px;
+    background: $weather-details-section-bg;
+    color: $weather-details-section-color;
+    font-size: 10px;
+    align-items: center;
+    padding: 7px;
+    border-radius: 100px;
+    label{
+        font-weight: 600;
+    }
+}
+//weatherdetails
+.weather-details{
+    height: 60%;
+    width: 100%;
+    position: relative;
+    img{
+        width: 80%;
+        height: 60%;
+        object-fit: contain;
+    }
+    .weather-details-body{
+        position: absolute;
+        top: 0;
+        padding: 15px 20px;
+        color: $weather-details-color;
+        display: flex; 
+        flex-direction: column;
+        gap: 4px;
+        .date{
+            font-weight: 500;
+        }
+        .place{
+            font-weight: 600;
+        }
+        .status{
+            font-size: 13px;
+        }
+        .weather-details-section-container{
+            width: fit-content;
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+        }
+    }
+}
+//stateDetails
+.state-details-container{
+    background-color: $state-details-bg;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 10px 0;
+    gap: 10px;
+    div{
+        font-weight: 500;
+    }
+    img{
+        width: 55px;
+    }
+}
 
-body{
-    overflow-x: hidden;
-    color: #18181B;
+//userDetails
+.user-details{
+    display: flex;
+    width: 100%;
+    height: 50% ;
+    .user-details-body{
+        height: 50%;
+        section{
+            margin-top: 30px;
+            width: 30%;
+            height: 20%;
+        }
+    }
+    .user-details-data-container{
+        width: 100%;
+        display: flex;
+        .doble-spot{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-right: 60px;
+        }
+        .doble-spot-end{
+            width: 30%;
+            height: 100%;
+            .google-map-container{
+                width: 100%;
+                height: 290px;
+                margin-top: 20px;
+                border-radius: 20px;
+                overflow: hidden;
+            }
+        }
+    }
 }

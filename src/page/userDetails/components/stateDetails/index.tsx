@@ -1,0 +1,1 @@
+export {StateDetails as default} from './stateDetails'
