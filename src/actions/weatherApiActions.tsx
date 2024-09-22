@@ -104,7 +104,7 @@ const createNewUser = (user :INewUser) => {
 
 
 export const getWeatherFromNewUser =  (dispatch:Dispatch) => (value: IInfoUserFromForm) => {
-    axios.get(`http://api.weatherapi.com/v1/current.json?key=8906e599e51042e4855194612241909&q=${value.lat},${value.lng}&aqi=no`)
+    axios.get(`https://api.weatherapi.com/v1/current.json?key=8906e599e51042e4855194612241909&q=${value.lat},${value.lng}&aqi=no`)
     .then(function (response) {
         const data: IAPIInfo = response.data
         const id = ''+Date.now()
