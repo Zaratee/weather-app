@@ -1,7 +1,20 @@
 import { useEffect, useState } from "react"
+import { UseFormRegister } from "react-hook-form"
 import { allAvatars } from "src/data/userProfiles"
 
-export const SelectAvatar = () => {
+interface IProps{
+    register: UseFormRegister<IFields>,
+  }
+interface IFields{
+    username: string,
+    lat: string,
+    lng: string,
+    profile: string
+}
+
+  
+export const SelectAvatar = (props: IProps) => {
+    const {register} = props
     const [currentAvatar, setCurrentAvatar] = useState('Profile 1')
     const [profileSelected, setProfileSelected] = useState(0)
     useEffect(() => {
@@ -15,7 +28,7 @@ export const SelectAvatar = () => {
             </div>
             <div className="avatar-input-container">
                 <label className="headline-desktop4">Selecciona tu avatar</label>
-                <select id="profile" name="profile" onChange={(e)=>setCurrentAvatar(e.target.value)}>
+                <select {...register("profile")} id="profile" name="profile" onChange={(e)=>setCurrentAvatar(e.target.value)}>
                     {
                         allAvatars.map((avatar)=>{
                             return(

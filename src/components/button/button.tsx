@@ -10,7 +10,7 @@ interface IProps {
     type: 'Icon Rounded' | 'Label Icon Right' | 'Label Icon Left' | 'Label',
     size: 'sm' | 'md',
     border?: boolean,
-    onClick: ()=>void
+    onClick?: ()=>void
 }
 
 
@@ -24,27 +24,27 @@ export const Button = (props: IProps ) => {
     switch (type) {
         case 'Label':
             return (
-                <div onClick={onClick} className={classNameCustom}>
+                <button type="submit" onClick={onClick} className={classNameCustom}>
                    {label}
-                </div>
+                </button>
               )
         case 'Label Icon Left':
             return (
-                <div onClick={onClick} className={classNameCustom}>
+                <button type="submit" onClick={onClick} className={classNameCustom}>
                    <SelectIcon type={iconType} color={iconColor} size={size}/> {label}
-                </div>
+                </button>
               )
         case 'Label Icon Right':
             return (
-                <div onClick={onClick} className={classNameCustom}>
+                <button type="submit" onClick={onClick} className={classNameCustom}>
                 {label} <SelectIcon type={iconType} color={iconColor} size={size}/>
-                </div>
+                </button>
               )
         case 'Icon Rounded':
             return (
-                <div onClick={onClick} onMouseEnter={()=> setShowArrow(true)} onMouseLeave={()=> setShowArrow(false)} className={` ${classNameCustom} button-rounded-${size}`}>
-                   {showArrow ?<SelectIcon type={'Arrow'} color={iconColor} size={size}/>: <SelectIcon type={iconType} color={iconColor} size={size}/> }
-                </div>
+                <button type="submit" onClick={onClick} onMouseEnter={()=> setShowArrow(true)} onMouseLeave={()=> setShowArrow(false)} className={` ${classNameCustom} button-rounded-${size}`}>
+                   {<SelectIcon type={showArrow ? 'Arrow':iconType} color={iconColor} size={size}/> }
+                </button>
               )
     
         default:

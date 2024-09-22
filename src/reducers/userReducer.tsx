@@ -1,5 +1,5 @@
 import { Action } from "@reduxjs/toolkit";
-import { INITIAL_USERS } from "src/actions/weatherApiActions";
+import { CREATE_USER, INITIAL_USERS } from "src/actions/weatherApiActions";
 import { allAvatars } from "src/data/userProfiles";
 
 const initialState: IUser[] = 
@@ -21,8 +21,8 @@ const initialState: IUser[] =
       {
         id: '2',
         username: 'Test girl',
-        lat: '20.6637808',
-        lng: '-103.4315425',
+        lat: '30.6637808',
+        lng: '-203.4315425',
         img: allAvatars[1].img,
         locationWeather : {
           humidity: '70',
@@ -48,25 +48,21 @@ const initialState: IUser[] =
       vis_km: string
     }
   }
+  interface IAction{
+    type: string,
+    user: IUser[]
+  }
 
-  export const UserReducer = (state = initialState, action : Action) => {
+  export const UserReducer = (state = initialState, action : IAction) => {
     switch (action.type) {
       case INITIAL_USERS:
         const newState = state
         return newState;
-      // case "@SET/USER":
-      //   return {
-      //     data: state?.data?.results?.map((obj) => ({
-      //       ...obj,
-      //       isFavorite: false
-      //     }))
-      //   };
-      // case "@UPDATE/USER":
-      //   return {
-      //     data: state?.data?.map((heroe, i) =>
-      //       i === action.payload ? { ...heroe, isFavorite: true } : heroe
-      //     )
-      //   };
+      case CREATE_USER:
+        const updateState= [];
+        state.forEach((user)=>updateState.push(user))
+        updateState.push(action.user)
+        return updateState
       default:
         return state;
     }

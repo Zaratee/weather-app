@@ -92,6 +92,10 @@ $input-color: #656565;
             outline: none;
         }
     }
+    .custom-input-error{
+        font-size: 10px;
+        color: rgb(164, 0, 0);
+    }
 }
 
 %button{
@@ -102,6 +106,9 @@ $input-color: #656565;
     gap: 5px;
     user-select: none;
     cursor: pointer;
+    &:focus{
+        outline: none;
+    }
 }
 .button-sm{ 
     padding: 5px 10px;
@@ -160,11 +167,17 @@ $input-color: #656565;
 .button-rounded-sm{
     border-radius: 100%;
     padding: 10px 10px;
+    &:hover{
+        border: 1px solid transparent;
+    }
 }
 
 .button-rounded-md{
     border-radius: 100%;
     padding: 15px 15px;
+    &:hover{
+        border: 1px solid transparent;
+    }
 }
 
 .button-border-primary-light{
