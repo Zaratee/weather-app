@@ -4,12 +4,12 @@ export const allAvatars = [
     {
         id: '1',
         name: 'Profile 1',
-        img: 'https://media.discordapp.net/attachments/852334128635969596/1286912591829930120/user1.png?ex=66f2edff&is=66f19c7f&hm=caef1489e9df7a3d370aa47aaa8f1fca6c77807ee8f7401d77972d111ab8d5d4&=&format=webp&quality=lossless&width=1008&height=1008'
+        img: 'https://media.discordapp.net/attachments/852334128635969596/1286912591829930120/user1.png?ex=66f833ff&is=66f6e27f&hm=76eb79b6b622bb71c0873d6596b2be0316f97e77239555d2d3b608f905dc07d8&=&format=webp&quality=lossless&width=936&height=936'
     },
     {
         id: '2',
         name: 'Profile 2',
-        img: 'https://media.discordapp.net/attachments/852334128635969596/1286912591829930120/user1.png?ex=66f2edff&is=66f19c7f&hm=caef1489e9df7a3d370aa47aaa8f1fca6c77807ee8f7401d77972d111ab8d5d4&=&format=webp&quality=lossless&width=1008&height=1008'
+        img: 'https://media.discordapp.net/attachments/852334128635969596/1286912592199290951/user2.png?ex=66f833ff&is=66f6e27f&hm=5f47ee22d395d5d1eae1a1f37584fdc9f39fc97095e1536bdc18f6ea2982e091&=&format=webp&quality=lossless&width=936&height=936'
     },
     {
         id: '3',

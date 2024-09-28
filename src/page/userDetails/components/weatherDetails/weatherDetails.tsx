@@ -20,7 +20,7 @@ export const WeatherDetails = (props: IProps) => {
   const {humidity, wind_kph, wind_degree, wind_dir, uv,  vis_km, name, date, temp_c, condition} = props.locationWeather
   return (
     <div className="weather-details">
-      <img src="https://media.discordapp.net/attachments/852334128635969596/1287285524494815262/bgWeatherDetails.png?ex=66f0fd91&is=66efac11&hm=87e68c1894def3b08b052d7b3935a6783047977e157a614ec4f364189fdb14be&=&format=webp&quality=lossless&width=516&height=1008"/>
+      <img src="https://media.discordapp.net/attachments/852334128635969596/1287285524494815262/bgWeatherDetails.png?ex=66f83dd1&is=66f6ec51&hm=36d348486e6961b0458c1c1808bd66b0d8c1d9d00486a8e2a37712497421f878&=&format=webp&quality=lossless&width=478&height=934"/>
       <div className="weather-details-body">
         <div className="date">{date}</div>
         <div className="headline-desktop1">{temp_c} °C</div>
