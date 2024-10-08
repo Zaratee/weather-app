@@ -86,9 +86,13 @@ interface INewUser{
 export const INITIAL_USERS = "@GET/INITIALUSERS";
 export const CREATE_USER = "@POST/NEWUSER";
 export const GET_USER_INFO = "@GET/USERINFO";
+export const DEL_USER = "@DEL/USER";
 
 const createNewUser = (user :INewUser) => {
   return { type: CREATE_USER, user };
+}
+export const deleteUser = (dispatch:Dispatch) => (userID: string) => { 
+    dispatch({type: DEL_USER, userID});
 }
 
 export const getWeatherFromNewUser =  (dispatch:Dispatch) => (value: IInfoUserFromForm) => {

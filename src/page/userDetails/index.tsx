@@ -46,7 +46,7 @@ const UserDetails = (props: IProps) => {
           <UserCard id={users.id} lat={users.lat} lng={users.lng} userImg={users.img} userName={users.username} hideButtons />
         </section>
         <section className='doble-spot-end'>
-          <StateDetails date={users.locationWeather.date} temperature={users.locationWeather.temp_c} type='SUN'/>
+          <StateDetails date={users.locationWeather.date} temperature={users.locationWeather.temp_c} type='WIND'/>
           <div className='google-map-container'>
             <GoogleMap lat={parseInt(users.lat)} lng={parseInt(users.lng)}/>
           </div>

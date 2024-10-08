@@ -32,7 +32,7 @@ export const SelectAvatar = (props: IProps) => {
                     {
                         allAvatars.map((avatar)=>{
                             return(
-                                <option onSelectCapture={(e)=> console.log(e)} key={avatar.id}>{avatar.name}</option>
+                                <option key={avatar.id}>{avatar.name}</option>
                             )
                         })
                     }

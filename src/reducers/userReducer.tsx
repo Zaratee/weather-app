@@ -1,4 +1,4 @@
-import { CREATE_USER, INITIAL_USERS } from "src/actions/weatherApiActions";
+import { CREATE_USER, DEL_USER, INITIAL_USERS } from "src/actions/weatherApiActions";
 import { allAvatars } from "src/data/userProfiles";
 
 const initialState: IUser[] = 
@@ -73,6 +73,14 @@ const initialState: IUser[] =
         state.forEach((user)=>updateState.push(user))
         updateState.push(action.user)
         return updateState
+      case DEL_USER:
+          let newArray = [...state]
+          const userToDelete = (user:IUser) => user.id == action?.userID 
+          const indexOfUser = newArray.findIndex(userToDelete)
+          if (indexOfUser > -1) { 
+            newArray.splice(indexOfUser, 1); 
+          }
+        return newArray
       default:
         return state;
     }

@@ -17,11 +17,11 @@ interface IFields{
 interface IProps{ 
     isModalActive: boolean
     setShowModalAddUser: (value: boolean)=>void,
-    createCustomAppointment: (value:IFields)=>void
+    addUser: (value:IFields)=>void
 }
 
 const ModalAddUser = (props : IProps) => {
-    const {isModalActive, setShowModalAddUser, createCustomAppointment} = props
+    const {isModalActive, setShowModalAddUser, addUser} = props
     const {
         register,
         handleSubmit,
@@ -34,7 +34,7 @@ const ModalAddUser = (props : IProps) => {
             alert('Latitud y Longitud deben de ser de valor numérico')
             return
         }
-        createCustomAppointment(data)
+        addUser(data)
         reset({'lat': '', 'lng':'','profile':'Profile 1','username' : ''})
         setShowModalAddUser(false)
     }
@@ -74,7 +74,7 @@ const ModalAddUser = (props : IProps) => {
 
 const actions = (dispatch : Dispatch ) => {
     return {
-      createCustomAppointment(newUserInfo: IFields ) {
+    addUser(newUserInfo: IFields ) {
         getWeatherFromNewUser(dispatch)(newUserInfo);
       },
     };

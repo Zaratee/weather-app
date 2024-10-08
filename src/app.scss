@@ -465,6 +465,34 @@ body{
     }
 }
 
+//modalDelUsers 
+.modal-del-user{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #c7c7c79d;
+    display: flex; 
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    .modal-del-user-container{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        padding:30px;
+        border-radius: 20px;
+    }
+    .btn-container{
+        display: flex;
+        gap: 5px;
+    }
+}
+
 //userDetails
 .user-details{
     display: flex;
