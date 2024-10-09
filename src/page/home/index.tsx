@@ -18,7 +18,7 @@ const Home = (props: IProps) => {
   const {users} = props
   return (
     <div className="home">
-        <div>
+        <div className="home-header">
             <div className="headline-desktop1">Usuarios registrados</div>
             <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias adipisci, esse voluptate nihil vel fugiat ipsa.</div>
         </div>

@@ -43,27 +43,27 @@ const ModalAddUser = (props : IProps) => {
     }
   return (
     <div className="modal-add-user">
-                <div className="add-card">
-                    <div className="add-card-header" >
-                        <Button onClick={()=>{setShowModalAddUser(false);reset({'lat': '', 'lng':'','profile':'Profile 1','username' : ''})}} type="Icon Rounded" iconType="Cross" color="Primary Light" size="md" iconColor="Primary"/>
-                    </div>
-                    <div className="add-card-body">
-                        <div className="add-user-info-section">
-                            <label className="headline-desktop3">Añadir un nuevo usuario</label>
-                            <form className="add-card-form" onSubmit={handleSubmit(onSubmit)}>
-                                <SelectAvatar  register={register} />
-                                <Input valueAsNumber={false}   name='username' error={errors.username} label="Usuario" placeholder="Nombre de usuario" register={register}  required/>
-                                <div className="add-user-input-container">
-                                        <Input  name="lat" error={errors.lat} label="Latitud" placeholder="Ingresa latitud" register={register} valueAsNumber required/>
-                                        <Input name="lng" error={errors.lng} label="Longitud" placeholder="Ingresa longitud" register={register} valueAsNumber required/>
-                                </div>
-                                <div className="fit-content">
-                                    <Button label={'Añadir usuario'} type="Label" color="Primary" size="md"/>
-                                </div>
-                            </form>
+            <div className="add-card">
+                <div className="add-card-header" >
+                    <Button onClick={()=>{setShowModalAddUser(false);reset({'lat': '', 'lng':'','profile':'Profile 1','username' : ''})}} type="Icon Rounded" iconType="Cross" color="Primary Light" size="md" iconColor="Primary"/>
+                </div>
+                <div className="add-card-body">
+                    <div className="add-user-info-section">
+                        <label className="headline-desktop3">Añadir un nuevo usuario</label>
+                        <form className="add-card-form" onSubmit={handleSubmit(onSubmit)}>
+                            <SelectAvatar  register={register} />
+                            <Input valueAsNumber={false}   name='username' error={errors.username} label="Usuario" placeholder="Nombre de usuario" register={register}  required/>
+                            <div className="add-user-input-container">
+                                    <Input  name="lat" error={errors.lat} label="Latitud" placeholder="Ingresa latitud" register={register} valueAsNumber required/>
+                                    <Input name="lng" error={errors.lng} label="Longitud" placeholder="Ingresa longitud" register={register} valueAsNumber required/>
+                            </div>
+                            <div className="fit-content btn-add-form">
+                                <Button label={'Añadir usuario'} type="Label" color="Primary" size="md"/>
+                            </div>
+                        </form>
                     </div>
                 <div  className="add-card-map-section">
-                   <GoogleMap/>
+                    <GoogleMap/>
                 </div>
             </div>
         </div>

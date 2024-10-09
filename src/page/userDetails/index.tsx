@@ -35,15 +35,19 @@ const UserDetails = (props: IProps) => {
   return (
     <div className='user-details'> 
     <div className='user-details-body'>
-      <div className='headline-desktop1'>Pronóstico del tiempo</div>
-      <div>Lorem ipsum dolor sit amet consectetur. Maecenas mauris massa magnis magna adipiscing proin. Vulputate facilisi ornare blandit eu eleifend at.</div>
+      <div className='user-details-title'>
+        <div className='headline-desktop1'>Pronóstico del tiempo</div>
+        <div>Lorem ipsum dolor sit amet consectetur. Maecenas mauris massa magnis magna adipiscing proin. Vulputate facilisi ornare blandit eu eleifend at.</div>
+      </div>
       <div className='user-details-data-container'>
         <section>
           <WeatherDetails locationWeather={users.locationWeather}/>
         </section>
         <section className='doble-spot'>
           <StateDetails date={users.locationWeather.date} temperature={users.locationWeather.temp_c} type='SUN'/>
+          <div>
           <UserCard id={users.id} lat={users.lat} lng={users.lng} userImg={users.img} userName={users.username} hideButtons />
+          </div>
         </section>
         <section className='doble-spot-end'>
           <StateDetails date={users.locationWeather.date} temperature={users.locationWeather.temp_c} type='WIND'/>

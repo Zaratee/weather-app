@@ -315,12 +315,13 @@ body{
     position: relative;
     .home-layout-body{
         @extend %content-center
-        }
     }
+}
 .details-layout{
     width: 100vw;
     height: 100vh;
     position: relative;
+    overflow-x: hidden;
     background-color: $navbar-body-bg;
     .details-layout-body{
         @extend %content-center
@@ -397,9 +398,8 @@ body{
 }
 //WeatherDetailsSection
 .weather-details-section{
-    width: 115%; 
+    width: 150px;
     display: flex;
-    
     gap: 5px;
     background: $weather-details-section-bg;
     color: $weather-details-section-color;
@@ -414,7 +414,7 @@ body{
 //weatherdetails
 .weather-details{
     height: 60%;
-    width: 100%;
+    width: 220px;
     position: relative;
     img{
         width: 80%;
@@ -472,7 +472,7 @@ body{
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #c7c7c79d;
+    background-color: #a1a1aa35;
     display: flex; 
     gap: 5px;
     align-items: center;
@@ -528,3 +528,121 @@ body{
         }
     }
 }
+
+@media only screen and (max-width: 700px) {
+    .headline-desktop1 {
+        font-size: 25px;
+    }
+    .headline-desktop2 {
+        font-size: 15px;
+    }
+    %content-center{
+        padding: 5px !important;
+    }
+    .navbar-body{
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0px;
+        margin-top: 20px;
+        height: 60% !important;
+        button{
+            margin-top: 20px;
+        }
+    }
+    .user-card{
+        padding-bottom: 15px;
+        height: fit-content;
+        img{
+            width: 130px;
+            height: 130px;
+        }
+    }
+    %button{
+        padding: 4px 6px;
+        font-size: 10px;
+    }
+    .user-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .home-layout{
+        width: fit-content !important;
+        height: fit-content !important;
+        overflow-x: hidden !important;
+    }
+    .home-header{
+        align-self: center;
+        max-width: 70%;
+        text-align: center;
+    }
+    .user-details-data-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .weather-details{
+        overflow-x: hidden !important;
+        img{
+            width: 220px;
+        }
+    }
+
+    .weather-details-section{
+        width: 150px;
+    }
+    
+    .user-details-title{
+        padding: 15px !important;
+    }
+
+    .doble-spot{
+        width: 60% !important;
+        flex-direction: row !important;
+        margin-right: 0px !important;
+
+    }
+    .doble-spot-end{
+        display: flex;
+        gap: 20px;
+        width: 60% !important;
+        flex-direction: row !important;
+        margin-bottom: 20px;
+    }
+
+    .state-details-container{
+        width: 30%;
+    }
+
+    .google-map-container{
+        width: 60% !important;
+    }
+
+    .overflow-hidden{
+        overflow: hidden !important;
+    }
+
+    .modal-del-user{
+        height: 100%;
+        .modal-del-user-container{
+            max-height: 450px;
+        }
+    }
+
+    .add-card-body{
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    .add-card-map-section{
+        width: 100% !important;
+    }
+
+    .add-user-info-section{
+        width: 100% !important;
+    }
+    .btn-add-form{
+        align-self: flex-end;
+    }
+  }
