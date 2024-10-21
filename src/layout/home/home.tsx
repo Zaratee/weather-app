@@ -20,7 +20,7 @@ export const HomeLayout = () => {
   }
 
   return (
-    <div className={`home-layout ${showModalAddUser || showModalDelUser && 'overflow-hidden'}`}>
+    <div className={`home-layout ${showModalAddUser && 'overflow-hidden '} ${showModalDelUser && 'overflow-hidden'}`}>
         <Navbar setShowModalAddUser={handlerShowModalAddUser}/>
         <div className="home-layout-body">
           <DelUserContext.Provider value={{setShowModal: setShowModalDelUser, setUserId:setUserDelID}}>
